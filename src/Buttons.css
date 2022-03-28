@@ -1,0 +1,285 @@
+.toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto auto;
+}
+
+.toggle-icon {
+  font-size: 1.5em;
+}
+
+.switch,
+.toggle-icon {
+  cursor: pointer;
+}
+
+.switch {
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  position: relative;
+  border: 3px solid var(--header-outline);
+  margin: 0 20px;
+}
+
+.switch-button {
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border-radius: 100%;
+  box-shadow: 0px 0px 0px 10px var(--header-outline);
+}
+
+.toggle.easy .switch {
+  background-color: hsl(214, 47%, 23%);
+  animation-name: advancedToEasyColor;
+  animation-duration: 0.5s;
+}
+
+.toggle.easy .switch-button {
+  margin-left: 0px;
+  animation-name: advancedToEasyBtn;
+  animation-duration: 0.5s;
+}
+
+.toggle.advanced .switch {
+  background-color: hsl(237, 49%, 15%);
+  animation-name: easyToAdvancedColor;
+  animation-duration: 0.5s;
+}
+
+.toggle.advanced .switch-button {
+  margin-left: 70px;
+  animation-name: easyToAdvancedBtn;
+  animation-duration: 0.5s;
+}
+
+@keyframes easyToAdvancedColor {
+  from {
+    background-color: hsl(214, 47%, 23%);
+  }
+
+  to {
+    background-color: hsl(237, 49%, 15%);
+  }
+}
+
+@keyframes advancedToEasyBtn {
+  from {
+    margin-left: 70px;
+  }
+
+  to {
+    margin-left: 0px;
+  }
+}
+
+@keyframes advancedToEasyColor {
+  from {
+    background-color: hsl(237, 49%, 15%);
+  }
+
+  to {
+    background-color: hsl(214, 47%, 23%);
+  }
+}
+
+@keyframes easyToAdvancedBtn {
+  from {
+    margin-left: 0px;
+  }
+
+  to {
+    margin-left: 70px;
+  }
+}
+
+.game-buttons-wrapper {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.game-buttons-wrapper.advanced {
+  width: 450px;
+  height: 450px;
+}
+
+.game-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.game-button {
+  border-radius: 100%;
+  border-width: 20px;
+  border-style: solid;
+  border-color: transparent;
+  width: fit-content;
+  height: fit-content;
+  background-color: #ffffff;
+  background-origin: border-box;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.game-button.advanced {
+  border-width: 15px;
+}
+
+.choose .game-button {
+  position: absolute;
+}
+
+.choose .game-button:hover {
+  box-shadow: 1px 1px 10px 5px white;
+}
+
+.icon-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  padding: 10px;
+  box-shadow: inset 0px 8px 0px 0px hsl(0, 0%, 80%);
+}
+
+.advanced .icon-bg {
+  padding: 20px;
+  width: 60px;
+  height: 60px;
+}
+
+.rock {
+  background-image: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  box-shadow: 0px 7px 0px 0px hsl(349, 70%, 45%);
+}
+
+.choose .rock {
+  bottom: 10px;
+  left: 120px;
+}
+
+.choose .rock.advanced {
+  bottom: 10px;
+  left: initial;
+  right: 70px;
+}
+
+.paper {
+  background-image: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  box-shadow: 0px 7px 0px 0px hsl(230, 89%, 45%);
+}
+
+.choose .paper {
+  top: 0;
+  left: 0;
+}
+
+.choose .paper.advanced {
+  top: 140px;
+  left: initial;
+  right: 0px;
+}
+
+.scissors {
+  background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  box-shadow: 0px 7px 0px 0px hsl(40, 84%, 45%);
+  top: 0;
+  right: 0;
+}
+
+.choose .scissors {
+  top: 0;
+  right: 0;
+}
+
+.choose .scissors.advanced {
+  top: 30px;
+  right: initial;
+  left: 170px;
+}
+
+.lizard {
+  background-image: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+  box-shadow: 0px 7px 0px 0px hsl(261, 72%, 45%);
+}
+
+.choose .lizard {
+  bottom: 10px;
+  left: 70px;
+}
+
+.spock {
+  background-image: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+  box-shadow: 0px 7px 0px 0px hsl(189, 58%, 45%);
+}
+
+.choose .spock {
+  top: 140px;
+  left: 0px;
+}
+
+@media screen and (max-width: 426px) {
+  .game-buttons-wrapper,
+  .game-buttons-wrapper.advanced {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 50px;
+  }
+
+  .game-bg {
+    transform: scale(0.8);
+  }
+  .choose .game-button {
+    transform: scale(0.7);
+  }
+
+  .choose .rock {
+    left: 25%;
+    bottom: 0px;
+  }
+
+  .choose .paper {
+    top: -30px;
+    left: -20px;
+  }
+
+  .choose .scissors {
+    top: -30px;
+    right: -20px;
+  }
+
+  .choose .scissors.advanced {
+    top: -20px;
+    left: 90px;
+  }
+
+  .choose .paper.advanced {
+    top: 70px;
+    right: -20px;
+  }
+
+  .choose .rock.advanced {
+    bottom: -30px;
+    right: 20px;
+  }
+
+  .choose .lizard.advanced {
+    bottom: -30px;
+    left: 20px;
+  }
+
+  .choose .spock.advanced {
+    top: 70px;
+    left: -20px;
+  }
+}
